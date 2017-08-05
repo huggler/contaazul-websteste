@@ -1,0 +1,51 @@
+  <!-- table -->
+    <form class="row" ng-submit="ctrl.save()">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="placa">Placa</label>
+          <input type="text" name="placa" maxlength="10" id="placa" class="form-control" ng-model="ctrl.form.placa" required="true" />
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group">
+          <label for="imagem">Imagem</label>
+          <input type="url" placeholder="Url da Imagem" name="imagem" id="imagem" class="form-control" ng-model="ctrl.form.imagem" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="marca">Marca</label>
+          <input type="text" name="marca" id="marca" class="form-control" ng-model="ctrl.form.marca" required="true" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="modelo">Modelo</label>
+          <input type="text" name="modelo" id="modelo" class="form-control" ng-model="ctrl.form.modelo" required="true" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="combustivel">Combustível</label>
+          <select name="combustivel" id="combustivel" class="form-control" ng-model="ctrl.form.combustivel">
+            <option value="Gasolina">Gasolina</option>
+            <option value="Álcool">Álcool</option>
+            <option value="Flex">Flex</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+         <div class="form-group">
+          <label for="valor">Valor</label>
+          <input type="text" name="valor" id="valor" class="form-control" ng-model="ctrl.form.valor" ui-money-mask />
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="pull-right">
+          <div class="form-group">
+            <a ui-sref="home" class="btn btn-danger">Cancelar</a>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </form>

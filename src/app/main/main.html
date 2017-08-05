@@ -1,0 +1,61 @@
+    <div class="row main-header">
+      <div class="col-md-6 col-xs-6">
+        <a class="btn btn-success btn-custom" title="Novo Carro" ui-sref="newcar">Novo Carro</a>
+      </div>
+      <div class="col-md-6 col-xs-6">
+        <form class="form-filter">
+          <div class="input-group input-group-lg input-group-custom">
+            <input type="search" placeholder="Pesquisar" name="searchFilter" class="form-control" ng-model="searchFilter" />
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-search" type="button" title="Pesquisar">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- table -->
+    <div class="table-responsive">
+      <table st-table="main.rowCollection" class="table table-custom">
+          <thead>
+          <tr>
+            <th>
+              <input type="checkbox" name="checkbox-select-all" id="checkbox-select-all" ng-model="checkbox" ng-change="main.checkAll(main.rowCollection, checkbox)" />
+              <label for="checkbox-select-all"></label>
+            </th>
+            <th st-sort="placa">Placa</th>
+            <th st-sort="modelo">Modelo</th>
+            <th st-sort="marca">Marca</th>
+            <th st-sort="imagen">Foto</th>
+            <th st-sort="combstivel">Combustível</th>
+            <th st-sort="valor" class="col-valor">Valor</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="row in main.rowCollection | filter : searchFilter" ng-class="{'row-selected' : row.selected}">
+              <td>
+                <input ng-checked="row.selected" ng-change="row.selected = row.selected" ng-model="row.selected" type="checkbox" name="checkbox-select" id="checkbox-select-{{$index}}" />
+                <label for="checkbox-select-{{$index}}"></label>
+              </td>
+              <td>{{row.placa | uppercase}}</td>
+              <td>{{row.modelo}}</td>
+              <td>{{row.marca}}</td>
+              <td>
+                <a href="{{row.imagem}}" target="_blank"  ng-show="row.imagem">Imagem</a>
+                <span ng-show="!row.imagem">Sem Foto</span>
+              </td>
+              <td>{{row.combustivel}}</td>
+              <td class="col-valor">{{row.valor | currency : ''}}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="7" class="text-center">
+                <div st-pagination="" st-items-by-page="main.itemsByPage" st-displayed-pages="7"></div>
+              </td>
+            </tr>
+          </tfoot>
+      </table>
+    </div>

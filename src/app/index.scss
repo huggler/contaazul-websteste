@@ -1,0 +1,54 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+/*****************************************************************/
+/* Mantendo a fonte usada no Site - contaazul.com.br */
+/*****************************************************************/
+@font-face{
+	font-family:'proximanova-regular';
+	src:url('https://contaazul.com/wp-content/themes/assets/global/layout/fonts/proximanova-regular.eot');
+	src:url('https://contaazul.com/wp-content/themes/assets/global/layout/fonts/proximanova-regular.eot?#iefix') format('embedded-opentype'), url('https://contaazul.com/wp-content/themes/assets/global/layout/fonts/proximanova-regular.woff2') format('woff2'), url('https://contaazul.com/wp-content/themes/assets/global/layout/fonts/proximanova-regular.woff') format('woff'), url('https://contaazul.com/wp-content/themes/assets/global/layout/fonts/proximanova-regular.ttf') format('truetype');
+	font-weight:normal;
+	font-style:normal
+}
+
+body {
+	background: #F1F4F9;
+	font-family: 'proximanova-regular';
+}
+
+
+/*****************************************************************/
+/* Overrides Class */
+/*****************************************************************/
+.container {
+	max-width: 1024px;
+	padding: 0;
+}
+.content {
+	padding: 0 41px 0 43px;
+}
+.form-control {
+	box-shadow: none;
+}
+[class*=" icon-"]:before, [class^=icon-]:before {
+	margin: 0;
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
